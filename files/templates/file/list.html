@@ -1,0 +1,7 @@
+{% for d in directory_objects %}
+	<a href="{{ d.get_absolute_url }}">{{d.title}}</a>
+{% endfor %}
+
+{% for f in file_objects %}
+	<a href="{{ f.get_absolute_url }}">{{f.title}}</a>
+{% endfor %}
