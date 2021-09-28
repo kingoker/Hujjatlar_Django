@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +8,8 @@
     <title>HUJATLAR</title>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500;600;700;900&display=swap"
     rel="stylesheet">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{% static css/reset.css %}">
+    <link rel="stylesheet" href="{% static css/style.css %}">
 </head>
 <body>
     <div class="wrapper">
@@ -49,177 +50,29 @@
                 <div class="main-content__container">
                     <!-- <h2 class="main-content__header">Ассоциация UZTEXTILEPROM</h2> -->
                     <div class="main-content__folders">
-                        <a href="/">
-                            <div class="main-content__item folder">
-                                <div class="folder__color">
+                        {% for f in file_objects %}
+                            <a href="{{ f.get_absolute_url }}">
+                                <div class="main-content__item folder">
+                                    <div class="folder__color">
+                                    </div>
+                                    <div class="folder__title">
+                                        <p>{{f.title}}</p>
+                                    </div>
                                 </div>
-                                <div class="folder__title">
-                                    <p>ШТАБ</p>
+                            </a>
+                        {% endfor %}
+
+                        {% for d in directory_objects %}
+                            <a href="{{ f.get_absolute_url }}">
+                                <div class="main-content__item folder">
+                                    <div class="folder__color">
+                                    </div>
+                                    <div class="folder__title">
+                                        <p>{{f.title}}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                        <a href="">
-                            <div class="main-content__item folder">
-                                <div class="folder__color">
-                                </div>
-                                <div class="folder__title">
-                                    <p>Приемная председателя</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/">
-                            <div class="main-content__item folder">
-                                <div class="folder__color">
-                                </div>
-                                <div class="folder__title">
-                                    <p>Приемная 1-заместителя (ДВ)</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/">
-                            <div class="main-content__item folder">
-                                <div class="folder__color">
-                                </div>
-                                <div class="folder__title">
-                                    <p>Приемная заместителя (БМ)</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/">
-                            <div class="main-content__item folder">
-                                <div class="folder__color">
-                                </div>
-                                <div class="folder__title">
-                                    <p>ШТАБ</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/">
-                            <div class="main-content__item folder">
-                                <div class="folder__color">
-                                </div>
-                                <div class="folder__title">
-                                    <p>ШТАБ</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/">
-                            <div class="main-content__item folder">
-                                <div class="folder__color">
-                                </div>
-                                <div class="folder__title">
-                                    <p>ШТАБ</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/">
-                            <div class="main-content__item folder">
-                                <div class="folder__color">
-                                </div>
-                                <div class="folder__title">
-                                    <p>ШТАБ</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/">
-                            <div class="main-content__item folder">
-                                <div class="folder__color">
-                                </div>
-                                <div class="folder__title">
-                                    <p>ШТАБ</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/">
-                            <div class="main-content__item folder">
-                                <div class="folder__color">
-                                </div>
-                                <div class="folder__title">
-                                    <p>ШТАБ</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/">
-                            <div class="main-content__item folder">
-                                <div class="folder__color">
-                                </div>
-                                <div class="folder__title">
-                                    <p>ШТАБ</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/">
-                            <div class="main-content__item folder">
-                                <div class="folder__color">
-                                </div>
-                                <div class="folder__title">
-                                    <p>ШТАБ</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/">
-                            <div class="main-content__item folder">
-                                <div class="folder__color">
-                                </div>
-                                <div class="folder__title">
-                                    <p>ШТАБ</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/">
-                            <div class="main-content__item folder">
-                                <div class="folder__color">
-                                </div>
-                                <div class="folder__title">
-                                    <p>ШТАБ</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/">
-                            <div class="main-content__item folder">
-                                <div class="folder__color">
-                                </div>
-                                <div class="folder__title">
-                                    <p>ШТАБ</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/">
-                            <div class="main-content__item folder">
-                                <div class="folder__color">
-                                </div>
-                                <div class="folder__title">
-                                    <p>ШТАБ</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/">
-                            <div class="main-content__item folder">
-                                <div class="folder__color">
-                                </div>
-                                <div class="folder__title">
-                                    <p>ШТАБ</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/">
-                            <div class="main-content__item folder">
-                                <div class="folder__color">
-                                </div>
-                                <div class="folder__title">
-                                    <p>ШТАБ</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/">
-                            <div class="main-content__item folder">
-                                <div class="folder__color">
-                                </div>
-                                <div class="folder__title">
-                                    <p>ШТАБ</p>
-                                </div>
-                            </div>
-                        </a>
+                            </a>
+                        {% endfor %}
                     </div>
                 </div>
             </section>    
