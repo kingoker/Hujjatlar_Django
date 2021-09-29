@@ -1,0 +1,236 @@
+*{
+    font-family: "Exo 2", sans-serif;
+}
+body.lock{
+    overflow: hidden;
+}
+.wrapper{
+    height: 100%;
+    width: 100%;
+}
+.container{
+    padding: 0px 30px;
+}
+.svg {
+    width: 20px;
+    height: 20px;
+}
+.main{
+    display: flex;
+    height: 100%;
+}
+.form{
+    display: grid;
+}
+/* Шапка */
+.header{
+    background-color: #208ED8;
+    height: 70px;
+    display: grid;
+    align-items: center;
+}
+.header__container{
+    width: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+}
+.header__title{
+    justify-self: center;
+    font-family: "Exo 2", sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+}
+.header__title a{
+    color: #FFFFFF;
+}
+.header__profile{
+    justify-self: end;
+    font-weight: normal;
+    font-size: 18px;
+    font-weight: 700;
+}
+.header__profile a{
+    color: #FFFFFF;
+}
+.header__profile a:hover{
+    text-decoration: underline;
+}
+
+
+/* Боковое меню */
+.sitebar{
+    width: 350px;
+    height: 100%;
+    box-shadow: 0px 0px 20px #C1C1C1;
+}
+.sitebar__container{
+    padding-top: 30px;
+}
+.sitebar__link{
+    display: flex;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #808080;
+    margin-bottom: 10px;
+}
+.sitebar__link p{
+    margin-left: 10px;
+}
+.sitebar__link:hover{
+    color: #208ED8;
+    fill: #208ED8;
+}
+.sitebar__title{
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #C9C9C9;
+}
+
+
+/* Область с папками */
+.main-content{
+    width: 100%;
+}
+.main-content__container{
+    margin: 30px 50px;
+}
+.main-content__header{
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 30px;
+}
+.main-content__item{
+    min-width: 300px;
+    display: flex;
+    border: 1px solid #208ED8;
+    box-sizing: border-box;
+    border-radius: 10px;
+    height: 63px;
+}
+.main-content__item:hover{
+    box-shadow: 0px 0px 4px #208ED8;
+}
+.folder__color{
+    width: 30px;
+    height: 63px;
+    background: #208ED8;
+    border-radius: 10px 0px 0px 10px;
+}
+.folder__title{
+    padding: 10px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+}
+.main-content__folders{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 80px;
+    row-gap: 20px;
+    justify-content: space-between;
+}
+
+/* Стили Попапов */
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.5s ease 0s;
+}
+.popup.open{
+    visibility: visible;
+    opacity: 1;
+}
+.popup.open .popup__content{
+    visibility: visible;
+    opacity: 1;
+}
+.popup__body{
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 30px;
+}
+.popup__content{
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 10px;
+    display: grid;
+    position: relative;
+    transition: all 0.5s ease 0s;
+    opacity: 0;
+}
+.popup-create-folder__content{
+    min-width: 500px;
+}
+.popup_close{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border-radius: 50%;
+    background-color: #F25D30;
+}
+.popup_close:hover{
+    background-color: #e63d0a;
+}
+.popup__title{
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 24px;
+}
+.popup__input{
+    min-width: 400px;
+    height: 50px;
+    box-shadow: inset 0px 0px 8px #C1C1C1;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 15px;
+    font-size: 18px;
+}
+.popup__input:focus{
+    box-shadow: inset 0px 0px 8px #0098FF;
+    color: #004879;
+}
+.popup__button{
+    min-width: 400px;
+    margin-top: 15px;
+}
+.button{
+    height: 50px;
+    color: #FFFFFF;
+    background-color: #0098FF; 
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 18px;
+}
+.button:hover{
+    background-color: #007acc;
+}
+
+
+/* Адаптивность */
+@media (max-width: 1340px){
+    .main-content__folders {
+        grid-template-columns: 1fr 1fr;
+    }
+}
