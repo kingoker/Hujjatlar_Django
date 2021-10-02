@@ -4,10 +4,6 @@
 body.lock{
     overflow: hidden;
 }
-.wrapper{
-    height: 100%;
-    width: 100%;
-}
 .container{
     padding: 0px 30px;
 }
@@ -50,6 +46,7 @@ body.lock{
     font-weight: normal;
     font-size: 18px;
     font-weight: 700;
+    color: #FFFFFF;
 }
 .header__profile a{
     color: #FFFFFF;
@@ -99,42 +96,45 @@ body.lock{
 .main-content__container{
     margin: 30px 50px;
 }
-.main-content__header{
-    width: 100%;
-    text-align: center;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 29px;
-    margin-bottom: 30px;
+.main-content__section-name{
+    color: #5f6368;
+    margin-left: 22px;
+    padding: 8px 0 16px;
+}
+.main-content__section{
+    margin-bottom: 8px;
 }
 .main-content__item{
     min-width: 300px;
     display: flex;
+    /* align-items: center; */
     border: 1px solid #208ED8;
     box-sizing: border-box;
-    border-radius: 10px;
-    height: 63px;
+    border-radius: 5px;
+    height: 40px;
+    overflow: hidden;
 }
 .main-content__item:hover{
     box-shadow: 0px 0px 4px #208ED8;
 }
 .folder__color{
-    width: 30px;
-    height: 63px;
-    background: #208ED8;
-    border-radius: 10px 0px 0px 10px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    min-width: 35px;
+    height: 100%;
 }
 .folder__title{
-    padding: 10px;
+    margin: 11px 5px;
     font-weight: 500;
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 14px;
+    overflow: hidden;
 }
-.main-content__folders{
+.main-content__folders, .main-content__file{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 80px;
-    row-gap: 20px;
+    column-gap: 30px;
+    row-gap: 10px;
     justify-content: space-between;
 }
 
@@ -204,7 +204,7 @@ body.lock{
     box-shadow: inset 0px 0px 8px #C1C1C1;
     border-radius: 10px;
     padding: 10px;
-    margin-top: 15px;
+    margin-bottom: 15px;
     font-size: 18px;
 }
 .popup__input:focus{
@@ -218,7 +218,7 @@ body.lock{
 .button{
     height: 50px;
     color: #FFFFFF;
-    background-color: #0098FF; 
+    background-color: #0098FF;
     border-radius: 10px;
     font-weight: 500;
     font-size: 18px;
@@ -226,11 +226,13 @@ body.lock{
 .button:hover{
     background-color: #007acc;
 }
-
+.select__title{
+    margin-left: 0px;
+}
 
 /* Адаптивность */
-@media (max-width: 1340px){
-    .main-content__folders {
+@media (max-width: 1240px){
+    .main-content__folders,  .main-content__file{
         grid-template-columns: 1fr 1fr;
     }
 }
