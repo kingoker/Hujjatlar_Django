@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="main-content">
+        <div class="main-content__container">
+            {% if searched  %}
+            <h2 class="main-content__section-name">Найдено папкок: {{ directory_list.count }}</h2>
+
+            <div class="main-content__section main-content__folders">
+                {% for d in directory_list %}
+                    <a class="main-content__item folder" href="{{ d.get_absolute_url }}">
+                        <div class="folder__color">
+                            <svg class="folder-svg svg">
+                                <use xlink:href="#fill_folder"></use>
+                            </svg>
+                        </div>
+                        <div class="folder__title">
+                            <p>{{d.title}}</p>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+
+            <h2 class="main-content__section-name">Найдено файлов: {{ file_list.count }}</h2>
+
+            <div class="main-content__section main-content__file">
+                {% for f in file_list %}
+                <a class="main-content__item file" href="{{ f.get_absolute_url }}">
+                    <div class="folder__color">
+                        <svg class="folder-svg svg">
+                            <use xlink:href="#Word"></use>
+                        </svg>
+                    </div>
+                    <div class="folder__title">
+                        <p>{{f.title}}</p>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </section>
+{% endblock content %}
+

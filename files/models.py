@@ -25,10 +25,12 @@ PDF = (".pdf")
 
 
 class Directory(models.Model):
+	objects = None
 	title = models.CharField(max_length=255)
 	directories = models.ForeignKey('self', on_delete=models.SET_NULL, related_name="directories_of_this", null=True, blank=True)
 	created = models.DateTimeField(auto_now_add=True)
 	slug = models.SlugField(max_length=255, unique=True, null=True, blank=True)
+
 	def save(self, *args, **kwargs):
 		self.slug = slugify(self.title)
 		super(Directory, self).save(*args, **kwargs)
@@ -44,7 +46,9 @@ class Directory(models.Model):
 	def get_absolute_url(self):
 		return reverse('files:files-list-detail', args=[self.slug])	
 
+
 class File(models.Model):
+	objects = None
 	title = models.CharField(max_length=255)
 	file = models.FileField(upload_to="users/files/%Y/%m/%d")
 	directory = models.ForeignKey('Directory', on_delete=models.SET_NULL, related_name="files_set", null=True, blank=True)
