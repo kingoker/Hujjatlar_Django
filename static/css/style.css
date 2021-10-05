@@ -20,10 +20,15 @@ body.lock{
 }
 /* Шапка */
 .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: #208ED8;
     height: 70px;
     display: grid;
     align-items: center;
+    z-index: 1;
 }
 .header__container{
     width: 100%;
@@ -58,12 +63,20 @@ body.lock{
 
 /* Боковое меню */
 .sitebar{
-    width: 350px;
+    margin-top: 70px;
+    width: 300px;
     height: 100%;
     box-shadow: 0px 0px 20px #C1C1C1;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 .sitebar__container{
-    padding-top: 30px;
+    display: grid;
+    align-content: space-between;
+    padding: 30px;
+    padding-bottom: 100px;
+    height: 100%;
 }
 .sitebar__link{
     display: flex;
@@ -88,10 +101,26 @@ body.lock{
     color: #C9C9C9;
 }
 
+/* Форма поиска */
+.search__input{
+    width: 100%;
+    height: 50px;
+    box-shadow: inset 0px 0px 8px #C1C1C1;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+.search__input:focus{
+    box-shadow: inset 0px 0px 8px #0098FF;
+    color: #004879;
+}
+
 
 /* Область с папками */
 .main-content{
     width: 100%;
+    padding: 70px 0px 0px 300px;
 }
 .main-content__container{
     margin: 30px 50px;

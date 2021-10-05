@@ -13,7 +13,7 @@ def list_files(request, slug=None):
 		directory_objects = Directory.objects.filter(directories=None)
 		file_objects = File.objects.filter(directory=None)
 	print(directory_objects)
-	return render(request, "file/list.html", {"directory_objects" : directory_objects, "file_objects" : file_objects, "slug" : slug})
+	return render(request, "file/index.html", {"directory_objects" : directory_objects, "file_objects" : file_objects, "slug" : slug})
 
 
 def detail_file(request, slug):
