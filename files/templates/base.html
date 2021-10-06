@@ -38,6 +38,7 @@
                         <svg class="folder-svg svg">
                             <use xlink:href="#folder"></use>
                         </svg>
+                        
                         <p class="menu__name">Создать папку</p>
                     </a>
                     <a href="#popup__document" class="sitebar__link popup-link">
@@ -69,8 +70,10 @@
                     <div class="popup_close close__popup"></div>
                 </a>
                 <div class="popup__title">Создать папку</div>
-                <form method="POST" class="form">
-                    <input class="popup__input" type="text" placeholder="Название папки">
+                <form method="POST" action="{% url 'files:directory-create' %}" class="form">
+                    {% csrf_token %}
+                    {{ directory_form.as_p }}
+                    <!-- <input class="popup__input" type="text" placeholder="Название папки"> -->
                     <!-- <input class="popup__input" type="text" placeholder="Описание"> -->
                     <button class="popup__button button">Создать папку</button>
                 </form>

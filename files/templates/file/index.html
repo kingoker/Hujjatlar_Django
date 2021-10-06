@@ -23,8 +23,21 @@
 
             <h2 class="main-content__section-name">Файлы</h2>
 
+
             <div class="main-content__section main-content__file">
-                <a class="main-content__item file" href="/">
+                {% for f in file_objects %}
+                    <a class="main-content__item file" href="{{f.get_absolute_url}}">
+                    <div class="folder__color">
+                        <svg class="folder-svg svg">
+                            <use xlink:href="{{f.file_type}}"></use>
+                        </svg>
+                    </div>
+                    <div class="folder__title">
+                        <p>{{f.title}}</p>
+                    </div>
+                </a>
+                {% endfor %}
+                <!-- <a class="main-content__item file" href="/">
                     <div class="folder__color">
                         <svg class="folder-svg svg">
                             <use xlink:href="#Word"></use>
@@ -96,6 +109,6 @@
                 </a>
             </div>
         </div>
-    </section>
+    </section> -->
 {% endblock content %}
 
