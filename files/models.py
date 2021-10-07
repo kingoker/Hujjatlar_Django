@@ -3,7 +3,7 @@ import os
 from django.template.defaultfilters import slugify
 from django.urls import reverse
 from django.contrib.auth import get_user_model
-
+import uuid
 # Create your models here.
 
 
@@ -26,10 +26,12 @@ PDF = (".pdf")
 
 VIDEO = (".mp4", ".mov", ".mkv", ".m4v", ".avi", ".flv", ".3gp", ".")
 
+
+
 class Base(models.Model):
 	author = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name="%(class)s_objects", null=True, blank=True)
 	title = models.CharField(max_length=255)
-	slug = models.SlugField(max_length=255, unique=True, null=True, blank=True)
+	uuid_id = models.UUIDField(editable=False)
 	created = models.DateTimeField(auto_now_add=True)
 
 	class Meta:
@@ -39,7 +41,8 @@ class Directory(Base):
 	directories = models.ForeignKey('self', on_delete=models.SET_NULL, related_name="directories_of_this", null=True, blank=True)
 
 	def save(self, *args, **kwargs):
-		self.slug = slugify(self.title)
+		self.uuid_id = uuid.uuid4()
+
 		super(Directory, self).save(*args, **kwargs)
 
 	class Meta:
@@ -51,7 +54,7 @@ class Directory(Base):
 		return f"{self.title}"	
 
 	def get_absolute_url(self):
-		return reverse('files:files-list-detail', args=[self.slug])	
+		return reverse('files:files-list-detail', args=[self.uuid_id])	
 
 
 class File(Base):
@@ -66,8 +69,7 @@ class File(Base):
 
 	# file type specification 
 	def save(self, *args, **kwargs):
-		self.slug = slugify(self.title)
-
+		self.uuid_id = uuid.uuid4()
 		if self.extension()[1] in WORD:
 			self.file_type = "#Word"
 		elif self.extension()[1] in EXCEL:
@@ -88,7 +90,7 @@ class File(Base):
 
 	
 	def get_absolute_url(self):
-		return reverse("files:file-detail", args=[self.slug])
+		return reverse("files:file-detail", args=[self.uuid_id])
 	
 
 	def __str__(self):
