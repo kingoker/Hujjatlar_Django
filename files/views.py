@@ -5,19 +5,6 @@ from django.views import generic
 from .forms import CreateDirectoryForm
 
 
-# def list_files(request, uuid=None):
-# 	""" List View for displaying all the files and directories """
-# 	if uuid:
-# 		directory = get_object_or_404(Directory, uuid_id=uuid)
-# 		directory_objects = directory.directories_of_this.all()
-# 		file_objects = directory.files_set.all()
-# 	else:	
-# 		directory_objects = Directory.objects.filter(directories=None)
-# 		file_objects = File.objects.filter(directory=None)
-# 	directory_create_form = CreateDirectoryForm() 	
-# 	# print(directory_objects)
-# 	return render(request, "file/index.html", {"directory_form" : directory_create_form  , "directory_objects": directory_objects, "file_objects": file_objects})
-
 
 
 class DetailFileView(generic.DetailView):
@@ -29,7 +16,10 @@ class DetailFileView(generic.DetailView):
 		obj = get_object_or_404(File, uuid_id=self.kwargs['uuid'])
 		return obj
 			
-class CreateDirectoryView(generic.View):
+class DirectoryCreateListView(generic.View):
+	""" This is the view for displaying list 
+	of directory and file and also  for 
+	creating directories for now"""
 	template_name = "file/index.html"
 	form_class = CreateDirectoryForm
 	success_url = '/'
