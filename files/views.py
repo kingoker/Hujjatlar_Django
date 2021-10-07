@@ -5,8 +5,6 @@ from django.views import generic
 from .forms import CreateDirectoryForm
 
 
-
-
 class DetailFileView(generic.DetailView):
 	""" Detail View for downloading or viewing file details """
 	template_name = "file/detail.html"
@@ -15,7 +13,8 @@ class DetailFileView(generic.DetailView):
 	def get_object(self):
 		obj = get_object_or_404(File, uuid_id=self.kwargs['uuid'])
 		return obj
-			
+
+
 class DirectoryCreateListView(generic.View):
 	""" This is the view for displaying list 
 	of directory and file and also  for 
@@ -23,6 +22,7 @@ class DirectoryCreateListView(generic.View):
 	template_name = "file/index.html"
 	form_class = CreateDirectoryForm
 	success_url = '/'
+
 	def get(self, request, uuid=None, *args, **kwargs):
 		if uuid:
 			directory = get_object_or_404(Directory, uuid_id=uuid)
@@ -33,8 +33,8 @@ class DirectoryCreateListView(generic.View):
 			file_objects = File.objects.filter(directory=None)
 		directory_create_form = CreateDirectoryForm() 	
 		# print(directory_objects)
-		return render(request, "file/index.html", {"directory_form" : directory_create_form  , "directory_objects": directory_objects, "file_objects": file_objects})
- 
+		return render(request, "file/index.html", {"directory_form": directory_create_form, "directory_objects": directory_objects, "file_objects": file_objects})
+
 	def post(self, request, uuid=None, *args, **kwargs):
 		directory_parent = None
 		if uuid:

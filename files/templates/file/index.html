@@ -8,16 +8,23 @@
 
             <div class="main-content__section main-content__folders">
                 {% for d in directory_objects %}
-                    <a class="main-content__item folder" href="{{ d.get_absolute_url }}">
-                        <div class="folder__color">
-                            <svg class="folder-svg svg">
-                                <use xlink:href="#fill_folder"></use>
-                            </svg>
-                        </div>
-                        <div class="folder__title">
-                            <p>{{d.title}}</p>
-                        </div>
-                    </a>
+                    <div class="main-content__item folder">
+                        <a class="folder__link" href="{{ d.get_absolute_url }}">
+                            <div class="folder__color">
+                                <svg class="folder-svg svg">
+                                    <use xlink:href="#fill_folder"></use>
+                                </svg>
+                            </div>
+                            <div class="folder__title">
+                                <p>{{d.title}}</p>
+                            </div>
+                        </a>
+                        <div class="folder__delete">
+                                <svg class="folder-svg svg">
+                                    <use xlink:href="#Delete"></use>
+                                </svg>
+                            </div>
+                    </div>
                 {% endfor %}
             </div>
 
@@ -26,16 +33,23 @@
 
             <div class="main-content__section main-content__file">
                 {% for f in file_objects %}
-                    <a class="main-content__item file" href="{{f.get_absolute_url}}">
-                    <div class="folder__color">
-                        <svg class="folder-svg svg">
-                            <use xlink:href="{{f.file_type}}"></use>
-                        </svg>
+                    <div class="main-content__item file">
+                        <a class="folder__link" href="{{f.get_absolute_url}}">
+                            <div class="folder__color">
+                                <svg class="folder-svg svg">
+                                    <use xlink:href="{{f.file_type}}"></use>
+                                </svg>
+                            </div>
+                            <div class="folder__title">
+                                <p>{{f.title}}</p>
+                            </div>
+                        </a>
+                        <div class="folder__delete">
+                            <svg class="folder-svg svg">
+                                <use xlink:href="#Delete"></use>
+                            </svg>
+                        </div>
                     </div>
-                    <div class="folder__title">
-                        <p>{{f.title}}</p>
-                    </div>
-                </a>
                 {% endfor %}
                 <!-- <a class="main-content__item file" href="/">
                     <div class="folder__color">

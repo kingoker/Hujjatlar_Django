@@ -61,7 +61,7 @@ class File(Base):
 	file = models.FileField(upload_to="users/files/%Y/%m/%d")
 	directory = models.ForeignKey('Directory', on_delete=models.SET_NULL, related_name="files_set", null=True, blank=True)
 	file_type = models.CharField(max_length=100, null=True, blank=True)
-	
+
 	# geting file extension
 	def extension(self):
 		name, extension = os.path.splitext(self.file.name)
@@ -87,15 +87,12 @@ class File(Base):
 			self.file_type = "#UnknownFile"			
 		
 		super(File, self).save(*args, **kwargs)
-
 	
 	def get_absolute_url(self):
 		return reverse("files:file-detail", args=[self.uuid_id])
-	
 
 	def __str__(self):
 		return f"{self.title}{self.extension()[1]}"
-
 
 
 class Department(models.Model):
@@ -103,5 +100,4 @@ class Department(models.Model):
 
 
 user_model = get_user_model()
-user_model.add_to_class('department',
-                        models.ForeignKey(Department, related_name='employees', on_delete=models.SET_NULL, null=True, blank=True))	
+user_model.add_to_class('department', models.ForeignKey(Department, related_name='employees', on_delete=models.SET_NULL, null=True, blank=True))
