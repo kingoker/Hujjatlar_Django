@@ -70,7 +70,7 @@
                     <div class="popup_close close__popup"></div>
                 </a>
                 <div class="popup__title">Создать папку</div>
-                <form method="POST" action="{% url 'files:directory-create' %}" class="form">
+                <form method="POST" class="form">
                     {% csrf_token %}
                     {{ directory_form.as_p }}
                     <!-- <input class="popup__input" type="text" placeholder="Название папки"> -->
