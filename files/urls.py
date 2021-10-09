@@ -5,11 +5,12 @@ app_name = "files"
 
 urlpatterns = [
 	path("", views.DirectoryCreateListView.as_view(), name="files-list"),
-	# path("file/create/", views.list_files, name="file-create"),
-	# path("directory/create/", views.CreateDirectoryView.as_view(), name="directory-create"),
 	path("search/", views.search, name='search'),
-	# path("<uuid:uuid_id>/", views.testview, name="test"),
-	path("detail/<uuid:uuid>/", views.DetailFileView.as_view(), name="file-detail"),
+	path("file/create/<uuid:uuid>/", views.FileCreateView.as_view(), name="file-create-detail"),
+	path("file/create/", views.FileCreateView.as_view(), name="file-create"),
+	# Shuni to'g'rila
+	# path("detail/<uuid:uuid>/", views.DetailFileView.as_view(), name="file-detail"),
+	path("delete/<uuid:uuid>/", views.DeleteDirectory.as_view(), name="directory-delete"),
 	path("<uuid:uuid>/", views.DirectoryCreateListView.as_view(), name="files-list-detail"),
 
 ]

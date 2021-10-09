@@ -20,9 +20,12 @@
                             </div>
                         </a>
                         <div class="folder__delete">
-                                <svg class="folder-svg svg">
-                                    <use xlink:href="#Delete"></use>
-                                </svg>
+                                <a href="{% url 'files:directory-delete' d.uuid_id %}"> 
+                                    <svg class="folder-svg svg">
+                                        <use xlink:href="#Delete"></use>
+                                    </svg>    
+                                </a>
+                                
                             </div>
                     </div>
                 {% endfor %}
@@ -34,7 +37,7 @@
             <div class="main-content__section main-content__file">
                 {% for f in file_objects %}
                     <div class="main-content__item file">
-                        <a class="folder__link" href="{{f.get_absolute_url}}">
+                        <a class="folder__link" href="{{f.file.url}}">
                             <div class="folder__color">
                                 <svg class="folder-svg svg">
                                     <use xlink:href="{{f.file_type}}"></use>
@@ -45,83 +48,17 @@
                             </div>
                         </a>
                         <div class="folder__delete">
-                            <svg class="folder-svg svg">
-                                <use xlink:href="#Delete"></use>
-                            </svg>
+                             
+                             <a href="#">
+                                
+                                <svg class="folder-svg svg">
+                                    <use xlink:href="#Delete"></use>
+                                </svg>        
+                             </a>
+                             
+                            
                         </div>
                     </div>
                 {% endfor %}
-                <!-- <a class="main-content__item file" href="/">
-                    <div class="folder__color">
-                        <svg class="folder-svg svg">
-                            <use xlink:href="#Word"></use>
-                        </svg>
-                    </div>
-                    <div class="folder__title">
-                        <p>Word документ</p>
-                    </div>
-                </a>
-                <a href="/" class="main-content__item file">
-                    <div class="folder__color">
-                        <svg class="folder-svg svg">
-                            <use xlink:href="#Excel"></use>
-                        </svg>
-                    </div>
-                    <div class="folder__title">
-                        <p>Excel документ</p>
-                    </div>
-                </a>
-                <a href="/" class="main-content__item file">
-                    <div class="folder__color">
-                        <svg class="folder-svg svg">
-                            <use xlink:href="#PowerP"></use>
-                        </svg>
-                    </div>
-                    <div class="folder__title">
-                        <p>Power Point документ</p>
-                    </div>
-                </a>
-                <a href="/" class="main-content__item file">
-                    <div class="folder__color">
-                        <svg class="folder-svg svg">
-                            <use xlink:href="#UnknownFile"></use>
-                        </svg>
-                    </div>
-                    <div class="folder__title">
-                        <p>Неизвестный файл</p>
-                    </div>
-                </a>
-                <a href="/" class="main-content__item file">
-                    <div class="folder__color">
-                        <svg class="folder-svg svg">
-                            <use xlink:href="#PDF"></use>
-                        </svg>
-                    </div>
-                    <div class="folder__title">
-                        <p>PDF файл</p>
-                    </div>
-                </a>
-                <a href="/" class="main-content__item file">
-                    <div class="folder__color">
-                        <svg class="folder-svg svg">
-                            <use xlink:href="#Image"></use>
-                        </svg>
-                    </div>
-                    <div class="folder__title">
-                        <p>image файл</p>
-                    </div>
-                </a>
-                <a href="/" class="main-content__item file">
-                    <div class="folder__color">
-                        <svg class="folder-svg svg">
-                            <use xlink:href="#Video"></use>
-                        </svg>
-                    </div>
-                    <div class="folder__title">
-                        <p>Video файл</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section> -->
+              
 {% endblock content %}

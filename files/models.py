@@ -30,7 +30,7 @@ VIDEO = (".mp4", ".mov", ".mkv", ".m4v", ".avi", ".flv", ".3gp", ".")
 
 class Base(models.Model):
 	author = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name="%(class)s_objects", null=True, blank=True)
-	title = models.CharField(max_length=255)
+	title = models.CharField(max_length=255, blank=True)
 	uuid_id = models.UUIDField(editable=False)
 	created = models.DateTimeField(auto_now_add=True)
 
@@ -38,7 +38,7 @@ class Base(models.Model):
 		abstract = True
 
 class Directory(Base):
-	directories = models.ForeignKey('self', on_delete=models.SET_NULL, related_name="directories_of_this", null=True, blank=True)
+	directories = models.ForeignKey('self', on_delete=models.CASCADE, related_name="directories_of_this", null=True, blank=True)
 
 	def save(self, *args, **kwargs):
 		self.uuid_id = uuid.uuid4()
@@ -59,7 +59,7 @@ class Directory(Base):
 
 class File(Base):
 	file = models.FileField(upload_to="users/files/%Y/%m/%d")
-	directory = models.ForeignKey('Directory', on_delete=models.SET_NULL, related_name="files_set", null=True, blank=True)
+	directory = models.ForeignKey('Directory', on_delete=models.CASCADE, related_name="files_set", null=True, blank=True)
 	file_type = models.CharField(max_length=100, null=True, blank=True)
 
 	# geting file extension
@@ -67,8 +67,17 @@ class File(Base):
 		name, extension = os.path.splitext(self.file.name)
 		return (name, extension)
 
+	def process_title(self, title):
+		title = self.extension()[0].split('/')
+		length = len(title)
+		title = title[length - 1]	
+		return title
+	
 	# file type specification 
 	def save(self, *args, **kwargs):
+		title = self.extension()[0].split('/')
+		self.title = self.process_title(title)
+		print(self.process_title(title))
 		self.uuid_id = uuid.uuid4()
 		if self.extension()[1] in WORD:
 			self.file_type = "#Word"

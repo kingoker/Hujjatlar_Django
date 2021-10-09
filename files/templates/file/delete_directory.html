@@ -1,0 +1,5 @@
+Are you sure to delete ?
+<form action="{% url 'files:directory-delete' obj.uuid_id %}" method="POST">
+	{% csrf_token %}
+	<input type="submit" value="delete" name="">
+</form>

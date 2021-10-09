@@ -73,8 +73,6 @@
                 <form method="POST" class="form">
                     {% csrf_token %}
                     {{ directory_form.as_p }}
-                    <!-- <input class="popup__input" type="text" placeholder="Название папки"> -->
-                    <!-- <input class="popup__input" type="text" placeholder="Описание"> -->
                     <button class="popup__button button">Создать папку</button>
                 </form>
             </div>
@@ -88,9 +86,11 @@
                     <div class="popup_close close__popup"></div>
                 </a>
                 <div class="popup__title">Загрузить документ</div>
-                <form method="POST" class="form">
+                
+                <form method="POST"  class="form" enctype="multipart/form-data">
                     {% csrf_token %}
-                    <input class="popup__input" type="file" name="file">
+                    {{ file_form }}
+                    <!-- <input class="popup__input" type="file" name="file"> -->
                     <button type="submit" class="popup__button button">Загрузить</button>
                 </form>
             </div>
