@@ -1,5 +1,5 @@
-Are you sure to delete ?
+Вы уверены что хотите удалить эту папку?
 <form action="{% url 'files:directory-delete' obj.uuid_id %}" method="POST">
 	{% csrf_token %}
-	<input type="submit" value="delete" name="">
+	<input type="submit" value="Удалить" name="">
 </form>

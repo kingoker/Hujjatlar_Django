@@ -38,7 +38,6 @@
                         <svg class="folder-svg svg">
                             <use xlink:href="#folder"></use>
                         </svg>
-                        
                         <p class="menu__name">Создать папку</p>
                     </a>
                     <a href="#popup__document" class="sitebar__link popup-link">
@@ -123,24 +122,24 @@
                 <div class="popup__title">Регистрация</div>
                 <form method="POST" class="form">
                     {% csrf_token %}
-                    <input class="popup__input" type="text" placeholder="Логин">
-                    <input class="popup__input" type="password" placeholder="Пароль">
-                    <input class="popup__input" type="password" placeholder="Повторите пароль">
-                    <h2 class="main-content__section-name select__title">Выбери отдел:</h2>
-                    <select class="popup__input" name="Otdel">
-                        <option value="Отдел 1">Отдел 1</option>
-                        <option value="Отдел 2">Отдел 2</option>
-                        <option value="Отдел 3">Отдел 3</option>
-                        <option value="Отдел 4">Отдел 4</option>
-                        <option value="Отдел 5">Отдел 5</option>
-                        <option value="Отдел 6">Отдел 6</option>
-                    </select>
+                    {{ registration_form }}
+<!--                    <input class="popup__input" type="text" placeholder="Логин">-->
+<!--                    <input class="popup__input" type="password" placeholder="Пароль">-->
+<!--                    <input class="popup__input" type="password" placeholder="Повторите пароль">-->
+<!--                    <h2 class="main-content__section-name select__title">Выбери отдел:</h2>-->
+<!--                    <select class="popup__input" name="Otdel">-->
+<!--                        <option value="Отдел 1">Отдел 1</option>-->
+<!--                        <option value="Отдел 2">Отдел 2</option>-->
+<!--                        <option value="Отдел 3">Отдел 3</option>-->
+<!--                        <option value="Отдел 4">Отдел 4</option>-->
+<!--                        <option value="Отдел 5">Отдел 5</option>-->
+<!--                        <option value="Отдел 6">Отдел 6</option>-->
+<!--                    </select>-->
                     <button type="submit" class="popup__button button">Зарегистрироваться</button>
                 </form>
             </div>
         </div>
     </div>
-
 
 
     <svg display="none">

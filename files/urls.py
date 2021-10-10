@@ -12,5 +12,4 @@ urlpatterns = [
 	# path("detail/<uuid:uuid>/", views.DetailFileView.as_view(), name="file-detail"),
 	path("delete/<uuid:uuid>/", views.DeleteDirectory.as_view(), name="directory-delete"),
 	path("<uuid:uuid>/", views.DirectoryCreateListView.as_view(), name="files-list-detail"),
-
 ]

@@ -1,9 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
+from django.contrib.auth import login, logout
 from .models import File, Directory, Department
 from django.views import generic
-from .forms import CreateDirectoryForm, CreateFileForm
+from .forms import CreateDirectoryForm, CreateFileForm, UserRegisterForm
 from django.http import HttpResponse
+
 
 class DeleteDirectory(generic.DeleteView):
 	template_name = "file/delete_directory.html"
@@ -21,11 +23,13 @@ class DeleteDirectory(generic.DeleteView):
 	
 	# handles post requests for deleting directory 
 	def post(self, request, *args, **kwargs):
-			return self.delete(request, *args, **kwargs)
+		return self.delete(request, *args, **kwargs)
+
 
 class FileCreateView(generic.View):
 	def post(self, request, uuid=None, *args, **kwargs):
 		print("Posted")
+
 
 class DirectoryCreateListView(generic.View):
 	""" This is the view for displaying list 
@@ -44,9 +48,11 @@ class DirectoryCreateListView(generic.View):
 		else:	
 			directory_objects = Directory.objects.filter(directories=None)
 			file_objects = File.objects.filter(directory=None)
-		directory_create_form = CreateDirectoryForm() 
-		file_create_form = CreateFileForm()	
-		return render(request, "file/index.html", {"directory_form": directory_create_form, "file_form" : file_create_form , "directory_objects": directory_objects, "file_objects": file_objects, "directory" : directory})
+
+		directory_create_form = CreateDirectoryForm()
+		registration_form = UserRegisterForm()
+		file_create_form = CreateFileForm()
+		return render(request, "file/index.html", {"directory_form": directory_create_form, "file_form": file_create_form, "directory_objects": directory_objects, "file_objects": file_objects, "directory": directory, "registration_form": registration_form})
 
 	def post(self, request, uuid=None, *args, **kwargs):
 		print(request.FILES)
@@ -71,13 +77,13 @@ class DirectoryCreateListView(generic.View):
 			if directory_parent:
 				directory_child = Directory.objects.create(author=author, title=cd.get('title'), directories=directory_parent) 	
 			else:
-				directory_child = Directory.objects.create(author=author, title=cd.get('title')) 	
-
+				directory_child = Directory.objects.create(author=author, title=cd.get('title'))
 			directory_child.save()
 		if directory_parent:
 			return redirect(directory_parent.get_absolute_url())	
-		return redirect('/')	
-			
+		return redirect('/')
+
+
 # Search form
 def search(request):
 	if request.method == "POST":
@@ -87,4 +93,19 @@ def search(request):
 		return render(request, 'file/search.html', {'searched': searched, 'directory_list': directory_list, 'file_list': file_list})
 	else:
 		return render(request, 'file/search.html', {})
+
+
+# User registration
+# def register(request):
+# 	if request.method == 'POST':
+# 		register_form = UserRegisterForm(request.POST)
+# 		if register_form.is_valid():
+# 			register_form.save()
+# 			messages.success(request, 'Вы успешно зарегистрировались')
+# 			return redirect('/')
+# 		else:
+# 			messages.error(request, 'Ошибка регистрации')
+# 	else:
+# 		register_form = UserRegisterForm()
+# 	return render(request, 'file/index.html', {'register_form': register_form})
 

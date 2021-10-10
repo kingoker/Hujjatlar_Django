@@ -4,7 +4,6 @@ from django.template.defaultfilters import slugify
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 import uuid
-# Create your models here.
 
 
 WORD = (
@@ -22,10 +21,9 @@ POWER_POINT = (
 
 IMAGE_TYPES = (".jpeg", ".png", ".jpg", )
 
-PDF = (".pdf")
+PDF = (".pdf", )
 
 VIDEO = (".mp4", ".mov", ".mkv", ".m4v", ".avi", ".flv", ".3gp", ".")
-
 
 
 class Base(models.Model):
@@ -36,6 +34,7 @@ class Base(models.Model):
 
 	class Meta:
 		abstract = True
+
 
 class Directory(Base):
 	directories = models.ForeignKey('self', on_delete=models.CASCADE, related_name="directories_of_this", null=True, blank=True)
@@ -91,7 +90,6 @@ class File(Base):
 			self.file_type = "#PDF"		
 		elif self.extension()[1] in VIDEO:
 			self.file_type = "#Video"
-
 		else:
 			self.file_type = "#UnknownFile"			
 		
