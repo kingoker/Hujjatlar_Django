@@ -4,26 +4,11 @@ from django.template.defaultfilters import slugify
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 import uuid
+from .constants import *
+import logging
 
+logger = logging.getLogger(__name__)
 
-WORD = (
-	".docx",".doc", ".docm", ".dotx", ".dotm", ".odt"
-	)
-
-EXCEL = (
-	".xlsx", ".xlsm", ".xltx", ".xltm", ".xlsb", ".xlam",
-	)
-
-POWER_POINT = (
-	".pptx", ".pptm", ".potx", ".potm", ".ppam", 
-	".ppsx", ".ppsm", ".sldx", ".sldm", ".thmx",
-	)
-
-IMAGE_TYPES = (".jpeg", ".png", ".jpg", )
-
-PDF = (".pdf", )
-
-VIDEO = (".mp4", ".mov", ".mkv", ".m4v", ".avi", ".flv", ".3gp", ".")
 
 
 class Base(models.Model):
@@ -31,6 +16,7 @@ class Base(models.Model):
 	title = models.CharField(max_length=255, blank=True)
 	uuid_id = models.UUIDField(editable=False)
 	created = models.DateTimeField(auto_now_add=True)
+
 
 	class Meta:
 		abstract = True
@@ -70,28 +56,33 @@ class File(Base):
 		title = self.extension()[0].split('/')
 		length = len(title)
 		title = title[length - 1]	
+		logger.warning("Processing title")
 		return title
-	
-	# file type specification 
-	def save(self, *args, **kwargs):
-		title = self.extension()[0].split('/')
-		self.title = self.process_title(title)
-		print(self.process_title(title))
-		self.uuid_id = uuid.uuid4()
-		if self.extension()[1] in WORD:
+	def match_type(self, ext):
+		logger.warning("Matching file type")
+
+		if ext in WORD:
 			self.file_type = "#Word"
-		elif self.extension()[1] in EXCEL:
+		elif ext in EXCEL:
 			self.file_type = "#Excel"
-		elif self.extension()[1] in POWER_POINT:
+		elif ext in POWER_POINT:
 			self.file_type = "#PowerP"
-		elif self.extension()[1] in IMAGE_TYPES:
+		elif ext in IMAGE_TYPES:
 			self.file_type = "#Image"
-		elif self.extension()[1] in PDF:
+		elif ext in PDF:
 			self.file_type = "#PDF"		
-		elif self.extension()[1] in VIDEO:
+		elif ext in VIDEO:
 			self.file_type = "#Video"
 		else:
 			self.file_type = "#UnknownFile"			
+		
+	# file type specification 
+	def save(self, *args, **kwargs):
+		title = self.extension()[0].split('/')
+		extension_type = self.extension()[1]
+		self.title = self.process_title(title)
+		self.uuid_id = uuid.uuid4()		
+		self.match_type(extension_type)
 		
 		super(File, self).save(*args, **kwargs)
 	

@@ -120,7 +120,7 @@
                     <div class="popup_close close__popup"></div>
                 </a>
                 <div class="popup__title">Регистрация</div>
-                <form method="POST" class="form">
+                <form action="{% url 'files:register' %}" method="POST" class="form">
                     {% csrf_token %}
                     {{ registration_form }}
 <!--                    <input class="popup__input" type="text" placeholder="Логин">-->
