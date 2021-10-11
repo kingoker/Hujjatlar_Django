@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="main-content">
+        <div class="main-content__container">
+            <div class="popup__registration-container">
+                <div class="popup-create-folder__body popup__body">
+                    <div class="popup-create-folder__content popup__registration">
+                        <a href="{% url 'files:logout' %}">
+                            <button type="submit" class="popup__button button">Выйти из аккаунта</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

@@ -1,13 +1,14 @@
+from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, get_object_or_404, redirect
-from django.urls import reverse
 from django.contrib.auth import login, logout
-from .models import File, Directory, Department
+from .models import File, Directory
 from django.views import generic
 from .forms import CreateDirectoryForm, CreateFileForm, UserRegisterForm
-from django.http import HttpResponse, HttpResponseRedirect, HttpResponseForbidden
-from django.views.decorators.http import require_POST
+from django.http import HttpResponseRedirect, HttpResponseForbidden
 import logging
 from django.contrib import messages
+from django.views.generic import ListView
+
 
 logger = logging.getLogger(__name__)
 
@@ -150,4 +151,26 @@ def registration(request):
 	else:
 		registration_form = UserRegisterForm()
 	return render(request, 'file/registration.html', {"registration_form": registration_form})
+
+
+def user_login(request):
+	if request.method == 'POST':
+		login_form = AuthenticationForm(data=request.POST)
+		if login_form.is_valid():
+			user = login_form.get_user()
+			login(request, user)
+			return redirect('/')
+	else:
+		login_form = AuthenticationForm()
+	return render(request, 'file/login.html', {"login_form": login_form})
+
+
+def user_logout(request):
+	logout(request)
+	return redirect('/')
+
+
+class ProfileView(ListView):
+	model = File
+	template_name = "file/profile.html"
 

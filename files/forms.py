@@ -8,7 +8,7 @@ class UserRegisterForm(UserCreationForm):
 	def __init__(self, *args, **kwargs):
 		super(UserRegisterForm, self).__init__(*args, **kwargs)
 		self.fields['username'].widget.attrs = {
-			"class": "popup__input", "type": "text", "placeholder": "Название папки",
+			"class": "popup__input", "type": "text", "placeholder": "Имя",
 		}
 		self.fields['password1'].widget.attrs = {
 			"class": "popup__input", "type": "password", "placeholder": "Пароль",

@@ -10,14 +10,12 @@
                         <a href="#">
                             <div class="popup_close close__popup"></div>
                         </a>
-                        <div class="popup__title">Регистрация</div>
+                        <div class="popup__title">Войти</div>
                         <form method="POST" class="form">
                             {% csrf_token %}
-                            {{ registration_form }}
-            <!--                    <input class="popup__input" type="text" placeholder="Логин">-->
-            <!--                    <input class="popup__input" type="password" placeholder="Пароль">-->
-            <!--                    <input class="popup__input" type="password" placeholder="Повторите пароль">-->
-                            <button type="submit" class="popup__button button">Зарегистрироваться</button>
+                            <input name="username" class="popup__input" type="text" placeholder="Логин">
+                            <input name="password" class="popup__input" type="password" placeholder="Пароль">
+                            <button type="submit" class="popup__button button">Войти</button>
                         </form>
                     </div>
                 </div>

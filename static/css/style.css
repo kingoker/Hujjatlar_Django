@@ -276,6 +276,12 @@ body.lock{
 .select__title{
     margin-left: 0px;
 }
+.popup__registration-container{
+
+}
+.popup__registration{
+
+}
 
 /* Адаптивность */
 @media (max-width: 1240px){

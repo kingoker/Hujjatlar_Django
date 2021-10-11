@@ -20,13 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48f8c8b2-8233-4a16-8f65-e8734504db4f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/files/templates/file/registration.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/templates/file/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/templates/file/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/templates/file/delete_file.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/templates/file/delete_file.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/templates/file/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/templates/file/registration.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +40,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -56,6 +60,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
