@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="popup-create-folder__body popup__body">
+        <div class="popup-create-folder__content popup__content">
+            <a href="#">
+                <div class="popup_close close__popup"></div>
+            </a>
+            <div class="popup__title">Регистрация</div>
+            <form action="{% url 'files:register' %}" method="POST" class="form">
+                {% csrf_token %}
+                {{ registration_form }}
+<!--                    <input class="popup__input" type="text" placeholder="Логин">-->
+<!--                    <input class="popup__input" type="password" placeholder="Пароль">-->
+<!--                    <input class="popup__input" type="password" placeholder="Повторите пароль">-->
+                <button type="submit" class="popup__button button">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

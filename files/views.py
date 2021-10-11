@@ -19,14 +19,13 @@ class BaseDeleteView(generic.DeleteView):
 	model = None
 	
 	def delete(self, request, *args, **kwargs):
-	    
-	    self.object = self.get_object()
-	    if request.user == self.object.author:
-	        success_url = self.get_success_url()
-	        self.object.delete()
-	        return HttpResponseRedirect(success_url)
-	    else:
-	    	return HttpResponseForbidden()    
+		self.object = self.get_object()
+		if request.user == self.object.author:
+			success_url = self.get_success_url()
+			self.object.delete()
+			return HttpResponseRedirect(success_url)
+		else:
+			return HttpResponseForbidden()
 
 	def get_object(self):
 		obj = get_object_or_404(self.model, uuid_id=self.kwargs['uuid'])
@@ -138,17 +137,17 @@ def search(request):
 
 # User registration
 # @require_POST
-def register(request):
+def registration(request):
 	if request.method == 'POST':
-		register_form = UserRegisterForm(request.POST)
-		logger.warning("register form : %r", request.POST)
-		print(register_form.is_valid())
-		if register_form.is_valid():
-			logger.warning("form is valid")
-			saved = register_form.save()
-			logger.warning("saved object : %r", saved)
+		registration_form = UserRegisterForm(request.POST)
+		if registration_form.is_valid():
+			user = registration_form.save()
+			login(request, user)
 			messages.success(request, 'Вы успешно зарегистрировались')
 			return redirect('/')
 		else:
 			messages.error(request, 'Ошибка регистрации')
-	
+	else:
+		registration_form = UserRegisterForm()
+	return render(request, 'file/registration.html', {"registration_form": registration_form})
+

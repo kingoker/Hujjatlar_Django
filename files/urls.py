@@ -4,13 +4,9 @@ from . import views
 app_name = "files"
 
 urlpatterns = [
+	path("registration/", views.registration, name="registration"),
 	path("", views.DirectoryCreateListView.as_view(), name="files-list"),
 	path("search/", views.search, name='search'),
-	# path("file/create/<uuid:uuid>/", views.FileCreateView.as_view(), name="file-create-detail"),
-	# path("file/create/", views.FileCreateView.as_view(), name="file-create"),
-	# Shuni to'g'rila
-	# path("detail/<uuid:uuid>/", views.DetailFileView.as_view(), name="file-detail"),
-	path("register/", views.register, name="register"),
 	path("delete/files/<uuid:uuid>/", views.DeleteFile.as_view(), name="file-delete"),
 	path("delete/directories/<uuid:uuid>/", views.DeleteDirectory.as_view(), name="directory-delete"),
 	path("<uuid:uuid>/", views.DirectoryCreateListView.as_view(), name="files-list-detail"),

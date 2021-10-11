@@ -22,9 +22,9 @@
                 <a href="/"><h1>HUJATLAR</h1></a>
             </div>
             <div class="header__profile">
-                <a href="#popup__signin" class="popup-link">Войти</a>
+                <a href="#popup__signin">Войти</a>
                 |
-                <a href="#popup__registration" class="popup-link">Регистрация</a>
+                <a href="{% url 'files:registration' %}">Регистрация</a>
             </div>
         </div>
     </header>
@@ -108,34 +108,6 @@
                     <input class="popup__input" type="text" placeholder="Логин">
                     <input class="popup__input" type="password" placeholder="Пароль">
                     <button type="submit" class="popup__button button">Войти</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div id="popup__registration" class="popup-upload-file popup">
-        <div class="popup-create-folder__body popup__body">
-            <div class="popup-create-folder__content popup__content">
-                <a href="#">
-                    <div class="popup_close close__popup"></div>
-                </a>
-                <div class="popup__title">Регистрация</div>
-                <form action="{% url 'files:register' %}" method="POST" class="form">
-                    {% csrf_token %}
-                    {{ registration_form }}
-<!--                    <input class="popup__input" type="text" placeholder="Логин">-->
-<!--                    <input class="popup__input" type="password" placeholder="Пароль">-->
-<!--                    <input class="popup__input" type="password" placeholder="Повторите пароль">-->
-<!--                    <h2 class="main-content__section-name select__title">Выбери отдел:</h2>-->
-<!--                    <select class="popup__input" name="Otdel">-->
-<!--                        <option value="Отдел 1">Отдел 1</option>-->
-<!--                        <option value="Отдел 2">Отдел 2</option>-->
-<!--                        <option value="Отдел 3">Отдел 3</option>-->
-<!--                        <option value="Отдел 4">Отдел 4</option>-->
-<!--                        <option value="Отдел 5">Отдел 5</option>-->
-<!--                        <option value="Отдел 6">Отдел 6</option>-->
-<!--                    </select>-->
-                    <button type="submit" class="popup__button button">Зарегистрироваться</button>
                 </form>
             </div>
         </div>
