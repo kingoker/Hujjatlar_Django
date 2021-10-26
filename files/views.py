@@ -1,6 +1,9 @@
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import login, logout
+from django.utils.decorators import method_decorator
+
 from .models import File, Directory
 from django.views import generic
 from .forms import CreateDirectoryForm, CreateFileForm, UserRegisterForm
@@ -57,13 +60,11 @@ class DeleteFile(BaseDeleteView):
 
 
 class DirectoryCreateListView(generic.View):
-    """ This is the view for displaying list
-	of directory and file and also  for
-	creating directories for now"""
     template_name = "file/index.html"
     form_class = CreateDirectoryForm
     success_url = '/'
 
+    @method_decorator(login_required)
     def get(self, request, uuid=None, *args, **kwargs):
         directory = None
         if uuid:
@@ -82,6 +83,7 @@ class DirectoryCreateListView(generic.View):
                        "directory_objects": directory_objects, "file_objects": file_objects, "directory": directory,
                        "registration_form": registration_form})
 
+    @method_decorator(login_required)
     def post(self, request, uuid=None, *args, **kwargs):
         logger.warning("posting files or directory")
         files = request.FILES
@@ -130,6 +132,7 @@ class DirectoryCreateListView(generic.View):
 
 
 # Search form
+@login_required
 def search(request):
     if request.method == "POST":
         searched = request.POST['searched']
@@ -141,8 +144,6 @@ def search(request):
         return render(request, 'file/search.html', {})
 
 
-# User registration
-# @require_POST
 def registration(request):
     if request.method == 'POST':
         registration_form = UserRegisterForm(request.POST)
