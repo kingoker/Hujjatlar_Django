@@ -1,11 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block tools %}
+    <div class="popup-link search__result">
+        <p class="menu__name">Найдено папок: {{ directory_list.count }}</p>
+    </div>
+    <div class="popup-link search__result">
+        <p class="menu__name">Найдено файлов: {{ file_list.count }}</p>
+    </div>
+{% endblock tools %}
+
+
 {% block content %}
     <section class="main-content">
         <div class="main-content__container">
             {% if searched  %}
-            <h2 class="main-content__section-name">Найдено папкок: {{ directory_list.count }}</h2>
+            <h2 class="main-content__section-name">Папки</h2>
 
             <div class="main-content__section main-content__folders">
                 {% for d in directory_list %}
@@ -22,7 +32,7 @@
                 {% endfor %}
             </div>
 
-            <h2 class="main-content__section-name">Найдено файлов: {{ file_list.count }}</h2>
+            <h2 class="main-content__section-name">Файлы</h2>
 
             <div class="main-content__section main-content__file">
                 {% for f in file_list %}

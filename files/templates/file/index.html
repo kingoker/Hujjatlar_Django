@@ -1,8 +1,22 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<!--{% block sitebar %}-->
-<!--{% endblock sitebar %}-->
+
+{% block tools %}
+<a href="#popup__folder" class="sitebar__link popup-link">
+    <svg class="folder-svg svg">
+        <use xlink:href="#folder"></use>
+    </svg>
+    <p class="menu__name">Создать папку</p>
+</a>
+<a href="#popup__document" class="sitebar__link popup-link">
+    <svg class="file-svg svg">
+        <use xlink:href="#file"></use>
+    </svg>
+    <p class="menu__name">Загрузить документ</p>
+</a>
+{% endblock tools %}
+
 
 {% block content %}
     <section class="main-content">

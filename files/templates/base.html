@@ -38,18 +38,8 @@
             <div class="sitebar__container container">
                 <div class="sitebar__tools">
                     <p class="sitebar__title">Инструменты</p>
-                    <a href="#popup__folder" class="sitebar__link popup-link">
-                        <svg class="folder-svg svg">
-                            <use xlink:href="#folder"></use>
-                        </svg>
-                        <p class="menu__name">Создать папку</p>
-                    </a>
-                    <a href="#popup__document" class="sitebar__link popup-link">
-                        <svg class="file-svg svg">
-                            <use xlink:href="#file"></use>
-                        </svg>
-                        <p class="menu__name">Загрузить документ</p>
-                    </a>
+                    {% block tools %}
+                    {% endblock tools %}
                 </div>
                 <div class="sitebar__search search">
                     <form action="{% url 'files:search' %}" method="POST" class="form">

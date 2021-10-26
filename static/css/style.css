@@ -115,6 +115,17 @@ body.lock{
     box-shadow: inset 0px 0px 8px #0098FF;
     color: #004879;
 }
+.search__result{
+    display: flex;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #808080;
+    margin-bottom: 10px;
+}
+.search__result p{
+    margin-left: 0px;
+}
 
 /* Область с папками */
 .main-content{
