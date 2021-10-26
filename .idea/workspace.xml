@@ -20,16 +20,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48f8c8b2-8233-4a16-8f65-e8734504db4f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/files/templates/file/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/files/templates/file/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/templates/file/sitebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Hujatlar.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Hujatlar.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/templates/file/registration.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/templates/file/registration.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/templates/file/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/templates/file/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/09/27/Python-Programming-clean-code.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/09/27/Screenshot_from_2021-07-13_11-25-47.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/09/27/Screenshot_from_2021-07-13_11-25-47_fk7yRG0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/09/27/Screenshot_from_2021-07-13_11-28-23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/09/27/Screenshot_from_2021-07-13_11-28-23_VbF2uC0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/09/27/Screenshot_from_2021-07-13_22-47-27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/09/27/The_Algorithm_Design_Manual_-_Second_Edition.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/09/27/math.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/09/27/math_1z3fynu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/09/27/text_words.odt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/09/27/text_words_1faH6KE.odt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/09/27/фориш_санрайз.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/09/28/1_Хотамов_Акбар.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/09/28/flant_about.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/09/29/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/05/-body-color-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/06/video_2021-09-12_21-36-31.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/07/-body-color-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/08/Clean_Code_Чистый_код_на_англ.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/08/Python_Unit_Test_Automation.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/08/Screenshot_31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/08/Screenshot_31_BXBkN3j.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/08/Tango_with_Django_en.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/08/Web_Development_with_Django_Cookbook_Second_Edition.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/09/-body-color-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/09/Python_Unit_Test_Automation.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/09/Strategy_eng_new_final_print.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/09/TLauncher-2.72.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/09/Tango_with_Django_en.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/09/resume_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/10/Old-TLauncher-2.72.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/11/README-EN.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/11/Screenshot_31.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/11/Tango_with_Django_en.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/11/Top_5_Covers_of_DUSK_TILL_DAWN_-_ZAYN_ft._Sia.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/11/Two_Scoops_of_Django_3_x_by_Daniel_Audrey_Feldroy_z_lib_org.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/11/Two_Scoops_of_Django_3_x_by_Daniel_Audrey_Feldroy_z_lib_org_LoTpynT.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/users/files/2021/10/11/Web_Development_with_Django_Cookbook_Second_Edition.pdf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,5 +130,15 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="495" y="230" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1633937357133">
+      <screen x="0" y="25" width="1440" height="817" />
+    </state>
+    <state x="495" y="230" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1440.817/1440.-72.1920.1080@0.25.1440.817" timestamp="1633937357133" />
+    <state x="408" y="190" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1634021914230">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="408" y="190" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1440.900@0.0.1440.900" timestamp="1634021914230" />
   </component>
 </project>

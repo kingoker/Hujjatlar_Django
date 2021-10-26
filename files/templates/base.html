@@ -11,6 +11,7 @@
     rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'image/logo.png' %}" type="image/x-icon">
 </head>
 <body class="wrapper">
     <header class="header">
@@ -19,7 +20,7 @@
                 <a href="/"><img src="{% static 'image/logo.png' %}" alt="logo"></a>
             </div>
             <div class="header__title">
-                <a href="/"><h1>HUJATLAR</h1></a>
+                <a href="/"><h1>HUJJATLAR</h1></a>
             </div>
             <div class="header__profile">
                 {% if request.user.is_authenticated %}
@@ -59,9 +60,9 @@
                 </div>
             </div>
         </section>
+
         {% block content %}
         {% endblock content %}
-
     </div>
 
 
