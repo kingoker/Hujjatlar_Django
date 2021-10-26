@@ -36,18 +36,8 @@
     <div class="main">
         <section class="sitebar">
             <div class="sitebar__container container">
-                <div class="sitebar__tools">
-                    <p class="sitebar__title">Инструменты</p>
-                    {% block tools %}
-                    {% endblock tools %}
-                </div>
-                <div class="sitebar__search search">
-                    <form action="{% url 'files:search' %}" method="POST" class="form">
-                        {% csrf_token %}
-                        <input class="search__input" type="text" placeholder="Поиск..." name="searched">
-                        <button type="submit" class="search__button button">Найти</button>
-                    </form>
-                </div>
+                {% block tools %}
+                {% endblock tools %}
             </div>
         </section>
 

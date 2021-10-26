@@ -1,13 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
 {% block tools %}
+<div class="sitebar__tools">
     <div class="popup-link search__result">
         <p class="menu__name">Найдено папок: {{ directory_list.count }}</p>
     </div>
     <div class="popup-link search__result">
         <p class="menu__name">Найдено файлов: {{ file_list.count }}</p>
     </div>
+</div>
+<div class="sitebar__search search">
+    <form action="{% url 'files:search' %}" method="POST" class="form">
+        {% csrf_token %}
+        <input class="search__input" type="text" placeholder="Поиск..." name="searched">
+        <button type="submit" class="search__button button">Найти</button>
+    </form>
+</div>
 {% endblock tools %}
 
 

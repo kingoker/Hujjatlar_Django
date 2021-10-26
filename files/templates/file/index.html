@@ -3,18 +3,28 @@
 
 
 {% block tools %}
-<a href="#popup__folder" class="sitebar__link popup-link">
-    <svg class="folder-svg svg">
-        <use xlink:href="#folder"></use>
-    </svg>
-    <p class="menu__name">Создать папку</p>
-</a>
-<a href="#popup__document" class="sitebar__link popup-link">
-    <svg class="file-svg svg">
-        <use xlink:href="#file"></use>
-    </svg>
-    <p class="menu__name">Загрузить документ</p>
-</a>
+<div class="sitebar__tools">
+    <p class="sitebar__title">Инструменты</p>
+    <a href="#popup__folder" class="sitebar__link popup-link">
+        <svg class="folder-svg svg">
+            <use xlink:href="#folder"></use>
+        </svg>
+        <p class="menu__name">Создать папку</p>
+    </a>
+    <a href="#popup__document" class="sitebar__link popup-link">
+        <svg class="file-svg svg">
+            <use xlink:href="#file"></use>
+        </svg>
+        <p class="menu__name">Загрузить документ</p>
+    </a>
+</div>
+<div class="sitebar__search search">
+    <form action="{% url 'files:search' %}" method="POST" class="form">
+        {% csrf_token %}
+        <input class="search__input" type="text" placeholder="Поиск..." name="searched">
+        <button type="submit" class="search__button button">Найти</button>
+    </form>
+</div>
 {% endblock tools %}
 
 
