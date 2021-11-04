@@ -22,11 +22,9 @@
     <list default="true" id="48f8c8b2-8233-4a16-8f65-e8734504db4f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/templates/file/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/templates/file/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/templates/file/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/templates/file/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/templates/file/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/templates/file/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/templates/file/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/templates/file/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

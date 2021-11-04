@@ -293,6 +293,20 @@ body.lock{
 .popup__registration{
 
 }
+.breadcrumbs{
+    border-top: 1px solid #5f6368;
+    border-bottom: 1px solid #5f6368;
+    padding: 10px 0px 10px 0px;
+    margin-bottom: 30px;
+}
+.bread{
+    font-size: 24px;
+    margin-left: 0px;
+    color: #5f6368;
+}
+.active{
+    color: silver;
+}
 
 /* Адаптивность */
 @media (max-width: 1240px){

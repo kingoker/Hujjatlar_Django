@@ -10,13 +10,11 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-
 class Base(models.Model):
 	author = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name="%(class)s_objects", null=True, blank=True)
 	title = models.CharField(max_length=255, blank=True)
 	uuid_id = models.UUIDField(editable=False)
 	created = models.DateTimeField(auto_now_add=True)
-
 
 	class Meta:
 		abstract = True
@@ -58,6 +56,7 @@ class File(Base):
 		title = title[length - 1]	
 		logger.warning("Processing title")
 		return title
+
 	def match_type(self, ext):
 		logger.warning("Matching file type")
 
