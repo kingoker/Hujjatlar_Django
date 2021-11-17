@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load breadcrumbs %}
 
 {% block tools %}
 <div class="sitebar__tools">
@@ -32,9 +32,9 @@
     <section class="main-content">
         <div class="main-content__container">
             <div class="breadcrumbs">
-                <a class="bread " href="">home</a> /
-                <a class="bread active" href="#">home</a>
+                {% breadcrumbs %}
             </div>
+
 
             <h2 class="main-content__section-name">Папки</h2>
 

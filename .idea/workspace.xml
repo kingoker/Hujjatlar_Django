@@ -22,8 +22,11 @@
     <list default="true" id="48f8c8b2-8233-4a16-8f65-e8734504db4f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/files/templates/file/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/templates/file/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/templates/file/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/files/templates/file/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/templatetags/breadcrumbs.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/templatetags/breadcrumbs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/files/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
